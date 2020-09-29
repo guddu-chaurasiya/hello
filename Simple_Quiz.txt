@@ -1,0 +1,12 @@
+# Quiz - 3 attempt
+print("Find the next sequence no.?")
+print(f"1, 5, 13, 25, ...,\n")
+
+chance = 0
+answer = 37
+while chance < 3:
+    count1 = int(input(f"chance {chance+1}: "))
+    chance +=1
+    if count1 == answer:
+        print("Correct answer")
+        break
