@@ -1,1 +1,6 @@
 # hello
+# how to import excel file.
+import pandas as pd
+
+result = pd.read_excel(r'C:/Users/Acer/Desktop/Practice/practice Macro.xlsx')
+print(result)
