@@ -1,0 +1,63 @@
+from tkinter import *
+from datetime import date
+
+window = Tk()
+window.title('Age Calculator')
+window.geometry('500x150')
+
+def days_calc():
+    try:
+        birth_date = date(int(y.get()),int(m.get()),int(d.get()))
+        current_dte = date.today()
+        answer = (current_dte - birth_date).days
+        result.config(text = f'{(nme.get()).title()}, You are {answer} days old!!', bg='yellow')
+    except:
+        result.config(text = 'Please fill all the required field!!', bg = 'red')
+
+def month_calc():
+    try:
+        birth_date = date(int(y.get()),int(m.get()),int(d.get()))
+        current_dte = date.today()
+        answer = (current_dte - birth_date).days
+        result.config(text = f'{(nme.get()).title()}, You are {round(answer/365*12,1)} months old!!', bg = 'yellow')
+    except:
+        result.config(text = 'Please fill all the required field!!', bg = 'red')
+
+def year_calc():
+    try:
+        birth_date = date(int(y.get()), int(m.get()), int(d.get()))
+        current_dte = date.today()
+        answer = (current_dte - birth_date).days
+        result.config(text = f'{(nme.get()).title()}, You are {round(answer/365,1)} years old!!', bg = 'yellow')
+    except:
+        result.config(text = 'Please fill all the required field!!', bg = 'red')
+
+name = Label(window, text = 'Name')
+name.grid(column = 0, row = 0)
+yr = Label(window, text = 'Year')
+yr.grid(column = 0, row = 1)
+mth = Label(window, text = 'Month')
+mth.grid(column = 0, row = 2)
+dd = Label(window, text = 'Date')
+dd.grid(column = 0, row = 3)
+
+result = Label(window, text = 'Result', bg = 'green')
+result.grid(column = 4, row = 2)
+
+nme = Entry(window)
+nme.grid(column = 1, row = 0)
+y = Entry(window)
+y.grid(column = 1, row = 1)
+m = Entry(window)
+m.grid(column = 1, row = 2)
+d = Entry(window)
+d.grid(column = 1 , row = 3)
+
+button = Button(window, text = 'Days', command = days_calc)
+button.grid(column = 3, row = 7)
+button1 = Button(window, text = 'Month', command = month_calc)
+button1.grid(column = 4, row = 7)
+button = Button(window, text = 'Year', command = year_calc)
+button.grid(column = 5, row = 7)
+
+window.mainloop()
