@@ -1,0 +1,11 @@
+#converter - paisa/rupees
+
+num1 = int(input("Enter value: "))
+convert = str(input("Enter R or P: "))
+
+if convert == 'r' or 'R':
+    print("Converted into Rupees: ",num1/100)
+elif convert == 'p' or 'P':
+    print("Converted into Paisa: ",num1*100)
+else:
+    print('wrong input')
